@@ -1,12 +1,11 @@
 #vkg
-if 'Shared'
+shared = get_option('Shared')
+if shared
   vvg_lib = shared_library('vvg', 'renderer.cpp', 'nanovg.c')
 else
   vvg_lib = static_library('vvg', 'renderer.cpp', 'nanovg.c')
 endif
-if 'Depend'
-  # add_dependencies(['vvg', 'vpp_ep'])
-endif
+# add_dependencies(['vvg', 'vpp_ep'])
 # link to vulkan and vpp
 Vulkan_dep = dependency('Vulkan')
 # target_link_libraries(['vvg', 'vpp', vulkan_library])

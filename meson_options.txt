@@ -1,5 +1,3 @@
-option('Debug', type : 'string', value : on, description : 'Build in debug mode')
-option('Examples', type : 'string', value : on, description : 'Build the render examples (windows-only)')
-option('Shared', type : 'string', value : on, description : 'Build the library shared')
-option('Depend', type : 'string', value : on, description : 'Pull in dependencies every built. Development opetion')
-option('Shaders', type : 'string', value : on, description : 'Rebuild the shader spirv headers. Development option')
+option('Debug', type : 'boolean', value : true, description : 'Build in debug mode')
+option('Examples', type : 'boolean', value : true, description : 'Build the render examples')
+option('Shared', type : 'boolean', value : true, description : 'Build the library shared')
