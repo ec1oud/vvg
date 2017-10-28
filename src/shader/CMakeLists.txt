@@ -63,7 +63,6 @@ function(add_shader2 name project)
 		DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${name}"
 		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
 		COMMENT "Building spirv shader - ${name}")
-	string(REGEX REPLACE \\\. _ array_name ${name})
 	add_custom_command(
 		OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/${name}.h"
 		COMMAND ${CMAKE_BINARY_DIR}/external/install/bin/bintoheader

@@ -1,0 +1,15 @@
+    # file(['COPY', 'Roboto-Regular.ttf', 'DESTINATION', cmake_binary_dir])
+    # file(['COPY', 'Roboto-Regular.ttf', 'DESTINATION', cmake_runtime_output_directory])
+    # add_executable(basic basic-windows.cpp)
+    # target_link_libraries(basic vpp vvg)
+    offscreen_exe = executable('offscreen', 'offscreen.cpp')
+    # target_link_libraries(['offscreen', 'vpp', 'vvg'])
+    # example using ny
+    # externalproject_add(['ny_ep', 'PREFIX', cmake_binary_dir, '/ny', 'GIT_REPOSITORY', 'https://github.com/nyorain/ny.git', 'GIT_TAG', 'master', 'INSTALL_DIR', cmake_binary_dir, '/external/install', 'CMAKE_ARGS', externalprojectcmakeargs])
+    # externalproject_add_step(['ny_ep', 'forceinstall', 'DEPENDEES', 'configure', 'DEPENDERS', 'install', 'ALWAYS', '1'])
+    basic-ny_exe = executable('basic-ny', 'basic-ny.cpp')
+    # target_link_libraries(['basic-ny', 'vpp', 'vvg', 'ny'])
+    if 'Depend'
+      # add_dependency(['basic-ny', 'ny_ep'])
+    endif
+    # add_custom_command(['TARGET', 'basic-ny', 'POST_BUILD', 'COMMAND', cmake_command, '-E', 'copy_directory', '${CMAKE_BINARY_DIR}/external/install/bin/.', '${CMAKE_BINARY_DIR}/bin', 'COMMENT', 'Copying external binary files'])
